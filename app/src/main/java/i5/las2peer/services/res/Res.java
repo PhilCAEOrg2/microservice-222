@@ -125,6 +125,59 @@ public class Res extends RESTService {
     return null;
   }
 
+  /**
+   * 
+   * getbyid
+   *
+   * 
+   * @param id  a String
+   * 
+   * @return Response 
+   * 
+   */
+  @GET
+  @Path("/test/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_NOT_FOUND, message = "notfound"),
+       @ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "badreq")
+  })
+  @ApiOperation(value = "getbyid", notes = " ")
+  public Response getbyid(@PathParam("id") String id) {
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // notfound
+    boolean notfound_condition = true;
+    if(notfound_condition) {
+      JSONObject notfound = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_NOT_FOUND).entity(notfound.toJSONString()).build();
+    }
+    // badreq
+    boolean badreq_condition = true;
+    if(badreq_condition) {
+      JSONObject badreq = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_BAD_REQUEST).entity(badreq.toJSONString()).build();
+    }
+    return null;
+  }
+
 
 
   }
